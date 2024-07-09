@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet"  type="text/css" href="css/bootstrap-theme.css"/>
+    <link rel="stylesheet"  type="text/css" href="css/style.css"/>
+    <link rel="stylesheet"  type="text/css" href="css/responsive.css"/>
+    <link rel="stylesheet"   href="/New folder/fontawesome/css/all.css"/>
+    <link rel="stylesheet" href="/1.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="main">
+        hassan
+         <div class="text-center">
+            <input type="text" class="text">
+         </div>
+         <div class=" ">
+            <button class=" bt" onclick="  diplay = '';
+           document.querySelector('.text').value = diplay;"  >c</button>
+
+            <button class=" bt" onclick="  diplay += '1';
+           document.querySelector('.text').value = diplay;" >1</button>
+
+            <button class=" bt" onclick="  diplay += '2';
+           document.querySelector('.text').value = diplay;">2</button>
+        </br>
+            <button class=" bt" onclick="  diplay += '+';
+           document.querySelector('.text').value = diplay;">+</button>
+            <button class=" bt" onclick="  diplay += '3';
+           document.querySelector('.text').value = diplay;">3</button>
+            <button class=" bt" onclick="  diplay += '4';
+           document.querySelector('.text').value = diplay;">4</button>
+        </br>
+            <button class=" bt" onclick="  diplay += '-';
+           document.querySelector('.text').value = diplay;">-</button>
+            <button class=" bt" onclick="  diplay += '5';
+           document.querySelector('.text').value = diplay;">5</button>
+            <button class=" bt" onclick="  diplay += '6';
+           document.querySelector('.text').value = diplay;">6</button>
+        </br>
+            <button class=" bt" onclick="  diplay += '*';
+           document.querySelector('.text').value = diplay;">*</button>
+            <button class=" bt" onclick="  diplay += '7';
+           document.querySelector('.text').value = diplay;" >7</button>
+            <button class=" bt" onclick="  diplay += '8';
+           document.querySelector('.text').value = diplay;">8</button>
+         </br>
+             <button class=" bt" onclick="  diplay += '/';
+           document.querySelector('.text').value = diplay;">/</button>
+
+             <button class=" bt" onclick="
+               diplay   = eval(diplay);
+            
+           document.querySelector('.text').value = diplay;">=</button>
+             <button class=" bt" onclick="  diplay += '9';
+           document.querySelector('.text').value = diplay;">9</button>
+         </br> 
+             <button class=" bt" onclick="  diplay += '0';
+           document.querySelector('.text').value = diplay;" >0</button>
+             <button class=" bt" onclick="  diplay += '.';
+           document.querySelector('.text').value = diplay;">.</button>
+             
+         </div>
+    </div>
+    
+</body>
+<script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script>
+    let diplay =""
+     document.querySelector(".text").value = diplay;
+    
+     
+</script>
+</html>

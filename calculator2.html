@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet"  type="text/css" href="css/bootstrap-theme.css"/>
+    <link rel="stylesheet"  type="text/css" href="css/style.css"/>
+    <link rel="stylesheet"  type="text/css" href="css/responsive.css"/>
+    <link rel="stylesheet"   href="/New folder/fontawesome/css/all.css"/>
+    <link rel="stylesheet" href="/2.css">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="first" step="any" id="first"   />
+    <select id="ope">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">x</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" id="second"   name="second" step="any"/>
+    <br>
+
+   <button onclick="cal()">calculate</button>
+    <input type="text"   id="res"  readonly="" name=""/>
+
+</body>
+<script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script>
+    function cal(){
+    let op1 = document.getElementById("first").value;
+     let op2= document.getElementById("second").value;
+     let op3= document.getElementById("ope").value;
+
+     if(op3 == "+"){
+         res = parseInt(op1) + parseInt(op2);  
+        
+     }
+     if(op3 == "-"){
+         res = parseInt(op1) - parseInt(op2);
+     }
+     if(op3 == "*"){
+         res = parseInt(op1) * parseInt(op2);
+     }
+     if(op3 == "/"){
+         res = parseInt(op1) / parseInt(op2);
+     }
+     
+     document.getElementById("res").value = res;
+     
+    }
+   
+</script>
+</html>
