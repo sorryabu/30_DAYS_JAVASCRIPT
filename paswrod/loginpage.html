@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/paswrod/loginpage.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <form> 
+            <h1>Login</h1>
+            <div  class="inputbox">
+            <input type="email" placeholder="username" required />
+            <i class='bx bxs-user'></i>
+            </div>
+            <div  class="inputbox">
+            <input  type="password" id="password1" placeholder="password" required onkeyup="passcheck(this.value)"/>
+            <i class='bx bx-lock-alt'></i>
+            </div>
+            <div  class="inputbox">
+                <input  type="password" id="password2" placeholder="password" onkeyup="check()"/>
+                <i class='bx bx-lock-alt'></i>
+            <div  class="forget">
+             <label>   <input  type="checkbox" /> REMEBER ME </label>
+             <a>forget password ?</a>
+                </div>
+                <P>
+                <error id="alert1"></error>
+                <error id="alert2"></error>
+            </P>
+            <p>
+                <label class="password-Check">8 characters</label>
+                <br>
+                <label class="password-Check">1 lower case character</label>
+                <br>
+                <label class="password-Check">1 upper case character</label>
+                <br>
+                <label class="password-Check">1 numerical character</label>
+                <br>
+                <label class="password-Check">1 special character</label>
+            </p>
+                <button type="submit" class="btn">login</button>
+                <div class="register-link">
+                  <p>
+                    Donot Have Account ? <a href="">Register</a>
+                  </p>
+                </div>
+        </form>
+
+    </div>
+</body>
+<script>
+  let password1 = document.querySelector("#password1");
+let password2 = document.querySelector("#password2");
+let flag = 0;
+
+function passcheck(data) {
+    let pascheck = document.getElementsByClassName("password-Check");
+    let lowercase = new RegExp('(?=.*[a-z])');
+    let uppercase = new RegExp('(?=.*[A-Z])');
+    let numerical = new RegExp('(?=.*[0-9])');
+    let specialchar = new RegExp('(?=.*[!@#\\$%\\^&\\*])');
+    let eightchar = new RegExp('(?=.{8,})');
+
+    if (eightchar.test(data)) {
+        pascheck[0].style.color = "blue";
+    } else {
+        pascheck[0].style.color = "black";
+    }
+    if (lowercase.test(data)) {
+        pascheck[1].style.color = "blue";
+    } else {
+        pascheck[1].style.color = "black";
+    }
+    if (uppercase.test(data)) {
+        pascheck[2].style.color = "blue";
+    } else {
+        pascheck[2].style.color = "black";
+    }
+    if (numerical.test(data)) {
+        pascheck[3].style.color = "blue";
+    } else {
+        pascheck[3].style.color = "black";
+    }
+    if (specialchar.test(data)) {
+        pascheck[4].style.color = "blue";
+    } else {
+        pascheck[4].style.color = "black";
+    }
+
+    check();
+}
+
+function check() {
+    let alert1 = document.querySelector("#alert1");
+    if (password2.value.length > 0) {
+        if (password2.value !== password1.value) {
+            alert1.innerHTML = "</br>Password does not match";
+            flag = 0;
+        } else {
+            alert1.innerHTML = "</br>Password match";
+            flag = 1;
+        }
+    } else {
+        alert1.innerHTML = "";
+        flag = 0;
+    }
+}
+
+window.addEventListener("keyup", function(e) {
+    let iscaps = e.getModifierState("CapsLock");
+    if (iscaps) {
+        document.querySelector("#alert2").innerHTML = "</br>CapsLock is ON ";
+    } else {
+        document.querySelector("#alert2").innerHTML = "";
+    }
+});
+
+function validate() {
+    let pascheck = document.getElementsByClassName("password-Check");
+    let allValid = true;
+    for (let i = 0; i < pascheck.length; i++) {
+        if (pascheck[i].style.color !== "blue") {
+            allValid = false;
+            break;
+        }
+    }
+    if (flag == 1 && allValid) {
+        return true;
+    } else {
+        alert("Password does not meet the requirements or does not match.");
+        return false;
+    }
+}
+</script>
+</html>

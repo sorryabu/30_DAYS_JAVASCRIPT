@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/tictakgame/tic.css">
+    <title>Document</title>
+</head>
+<body>
+  <div class="msg-container hide" >
+ <p id="msg" >winner</p>
+ <div class="bt2">
+ <button  class=" n ">New Game</button>
+</div>
+  </div>
+    <h1 id="msg">Game </h1>
+<div class="container">
+   <div class="row">
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+    <button class="box"></button>
+   </div>
+       
+</div>
+
+<div class="bt" >
+<button class="b" >Reset</button>
+</div>
+    
+
+</body>
+
+<script type="text/javascript">
+   
+   let x = document.querySelectorAll(".box");
+   let reset = document.querySelector(".b");
+   let tr =true;
+   let newgame = document.querySelector(".n");
+   let mesg = document.querySelector("#msg");
+   let  xx= document.querySelector(".msg-container")
+   let win =[
+    [0,1,2],
+    [0,3,6],
+    [0,4,8],
+    [1,4,7],
+    [2,5,8],
+    [2,4,6],
+    [3,4,5],
+    [6,7,8]
+  ];
+  x.forEach((box)=>{
+  
+     box.addEventListener("click",()=>{
+       if(tr){
+        box.innerText="0";
+        tr=false;
+      
+       }else{
+        box.innerText="x"
+        tr=true;
+       }
+       box.disabled=true;
+       winner();
+     })     
+  })
+
+ const resetgame= ()=>{
+  enableboxes();
+  xx.classList.add("hide")
+ }
+
+ const enableboxes=()=>{
+ for (let box of x){
+  box.disabled=false;
+  box.innerText=""
+  
+ }
+}
+const diableboxes=()=>{
+ for (let box of x){
+  box.disabled=true;
+  
+ }
+}
+
+  const showwiner=(winner)=>{
+   mesg.innerText=`Congratulation the winner is ${winner}`;
+  xx.classList.remove("hide");
+  diableboxes();
+  }
+
+
+
+
+  const winner = ()=>{
+     for(let patten of win ){
+       let position0= x[patten[0]].innerText;
+       let position1= x[patten[1]].innerText;
+       let position2= x[patten[2]].innerText;
+      if(position0 != "" && position1 !="" && position2 != " "){
+        if(position0== position1 && position1== position2){
+          console.log("winner",position0)
+          showwiner(position0);
+        }
+      }
+     }
+ };
+
+newgame.addEventListener("click",resetgame);
+reset.addEventListener("click",resetgame)
+</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form  onsubmit=" return validate()">
+    <p>
+      <h1>Hassan<br> Registration Form</h1> 
+    </p>
+    <p>
+        <label>User Name</label>
+        <input type="text" id="user" />
+        </p>
+        <p>
+         <label> Password </label>
+        <input type="password" id="password1" />
+    </p>
+    <p>
+        <label> Confirm Password </label>
+        <input type="password" id="password2" onkeyup="check(this)" />
+        <error id="alert1"></error>
+        <error id="alert2"></error>
+    </p>
+    <p>
+        <input type="submit" id="submit">
+    </p>
+</form>
+</body>
+<script>
+
+window.addEventListener("keyup",function(e){
+      let iscaps= e.getModifierState("CapsLock")
+      if(iscaps){
+       document.querySelector("#alert2").innerHTML="</br>CapsLock is ON "
+      }else{
+       document.querySelector("#alert2").innerHTML=""
+      }
+})
+
+
+
+
+
+let password1= document.querySelector("#password1")
+ var flag=1
+   function check(e){
+    if(e.value.length>0){
+        if(e.value !==password1.value){
+          document.querySelector("#alert1").innerHTML="</br>password does not match"
+          flag=0
+        }else{
+            document.querySelector("#alert1").innerHTML="</br>password  match"
+            flag = 1;
+        }
+
+    }else{
+         document.querySelector("#alert1").innerHTML=""
+         flag=0;
+    }
+  }
+ function validate(){
+    if (flag==1){
+        return true;
+    }else{
+        return false;
+    }
+ }
+</script>
+</html>

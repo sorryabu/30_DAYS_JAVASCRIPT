@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1 >hassan</h1>
+    <h2 class="one">hassan</h2> -->
+
+
+    <!-- <ul class="w"> -->
+        <!-- <li>one </li>
+        <li>two</li>
+
+
+    </ul> -->
+
+   <ul class="language">
+    <Li> javascript </Li>
+    <Li> phyton </Li>
+    <Li> mongo </Li>
+
+   </ul>
+
+
+
+
+
+</body>
+<script type="text/javascript">
+    //                                        manipulating elemnt 
+    //   document.querySelector("h1").style.fontStyle= "italic";
+    //   document.getElementsByClassName("one")[0].style.background="red"
+
+//                                              create  and appending element
+
+//   let   newdiv =document.createElement("div");
+ 
+//   newdiv.textContent="hello there ! i am hassan "
+
+//   document.body.append(newdiv);
+
+//   let newli =document.createElement("li");
+
+//   newli.textContent="three";
+//     let get=document.getElementsByClassName("w")[0];
+//      get.append(newli);
+
+//                                             free
+
+
+
+//   function addlang(lang){
+//       let li =document.createElement("li")
+//        li.innerHTML= `${lang}`
+//         document.getElementsByClassName("language")[0].append(li)
+ 
+//   }
+//   addlang("next js")
+
+  function optlang(lang){
+
+    let li =document.createElement("li")
+    li.appendChild(document.createTextNode(lang))
+   document.querySelector(".language").append(li)
+  }
+
+optlang("c++")
+//                                              edit1
+// let secondlang=document.querySelector("li:nth-child(2)");
+
+//  secondlang.innerHTML="hassan"
+//                                               edit2
+// let secondlang=document.querySelector("li:nth-child(2)");
+//   let newli=document.createElement("li")
+//  newli.textContent= "c"
+//   secondlang.replaceWith(newli)
+
+ //                                              edit3
+
+// let firstlang=document.querySelector("li:first-child");
+// firstlang.outerHTML="<li>type script </li>"
+//                                           remove
+
+let lastlang=document.querySelector("li:last-child")
+
+lastlang.remove()
+
+
+
+
+
+
+
+
+
+
+
+
+      </script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+    //                                                 es6+ feactures
+    //                                                 teamplate letrals
+    //  let  name = `hassan `
+    //  let  fulname = `Muhamad ${name}`
+    //  let num= `26 `
+    //  console.log(`${fulname}and date is ${num}`)
+    //                                                   destruing 
+    // let x=[1,2,3,4,5,6]
+    // let[q,w,e,r,t,y]=x
+    // console.log(`${q} and ${w}`)
+
+    // let z={
+    //     name:"hassan",
+    //     age : 26,
+    //     Num: "02334010",
+    //     email:"hassan@sdksdks.com"
+
+    // }
+    // let {name,age,Num,email}=z
+    // console.log(`${name} and ${age}`)
+    //                                        spread and rest operator 
+//   rest
+//  function add(a,b,c, ...other){
+//     console.log(other)
+//     return a+b+c
+//  }
+//  console.log(add(1,2,3,4,5,6))
+   
+//  spread
+ let v =[1,2,3,4,5,6,4,5,6,7,8,5]
+
+console.log(...v)
+
+
+let x={
+    name: "hassan",
+    age : 22,
+    Email:"hassan@gmail.com"
+}
+
+     let {...spread}=x
+     console.log(spread);
+
+
+     let {...rest}=x
+
+     console.log(rest);
+
+
+</script>
+</html>

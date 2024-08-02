@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.b{
+    background-color: rgb(95, 92, 92);
+}
+</style>
+<body class="b">
+    <form  onsubmit=" return validate()">
+    <p>
+      <h1>Hassan<br> Registration Form</h1> 
+    </p>
+    <p>
+        <label>User Name</label>
+        <input type="text" id="user" />
+        </p>
+        <p>
+         <label> Password </label>
+        <input type="text" id="password1" onkeyup="passcheck(this.value)" />
+    </p>
+    <p>
+        <label> Confirm Password </label>
+        <input type="password" id="password2"  />
+        
+    </p>
+    <p>
+        <label class="password-Check">8 characters</label>
+        <br>
+        <label class="password-Check">1 lower case characters</label>
+        <br>
+        <label class="password-Check">1 upper case characters</label>
+        <br>
+        <label class="password-Check">1 numerical characters</label>
+        <br>
+        <label class="password-Check">1 special characters</label>
+    </p>
+    <p>
+        <input type="submit" id="submit">
+    </p>
+    
+</form>
+</body>
+<script>
+function passcheck(data){
+    let pascheck=document.getElementsByClassName("password-Check");
+  let lowercase=new RegExp ('(?=.*[a-z])');
+  let uppercase=new RegExp ('(?=.*[A-Z])');
+  let numerical=new RegExp ('(?=.*[0-9])');
+  let specialchar=new RegExp ('(?=.*[!@#\$%\^&\*])');
+  let eightchar=new RegExp ('(?=.{8,})');
+
+  if(eightchar.test(data)){
+   pascheck[0].style.color="blue";
+  }else{
+   pascheck[0].style.color="black";
+  }
+ 
+if(lowercase.test(data)){
+    pascheck[1].style.color="blue";
+
+}else{
+    pascheck[1].style.color="black";
+}
+if(uppercase.test(data)){
+    pascheck[2].style.color="blue";
+
+}else{
+    pascheck[2].style.color="black";
+}
+if(numerical.test(data)){
+    pascheck[3].style.color="blue";
+
+}else{
+    pascheck[3].style.color="black";
+}
+if(specialchar.test(data)){
+    pascheck[4].style.color="blue";
+
+}else{
+    pascheck[4].style.color="black";
+}
+
+
+
+}
+</script>
+</html>

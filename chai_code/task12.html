@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+//                                              erroe handling 
+
+//   practice 
+//     let a =  prompt("enter fist number ")
+//   let b=   prompt("entr sencond number" )
+  
+     
+//       let q  = parseInt(a)+ parseInt(b);
+   
+// try {
+//     if ( isNaN(a) ||isNaN(b) ){
+//       throw SyntaxError("kider")
+//     }
+//     console.log(q);
+// } catch (error) {
+//     console.log(error)
+// }
+
+// console.log("bhi aja yar")
+// function add(a,b){
+//     return console.log(a+b)
+// }
+//  add(2,3)
+//                                 task 1
+// let q;
+// function task(){
+//     let a =  prompt("enter fist number ")
+//   let b=   prompt("entr sencond number" )
+  
+//   if ( isNaN(a) ||isNaN(b) ){
+//       throw SyntaxError("kider")
+//     }
+//     q =    parseInt(a)+ parseInt(b);
+   
+     
+
+// }
+// try {
+//     task();
+//     console.log(q);
+// } catch (error) {
+//     console.log(error)
+// }
+// console.log("bhi aja yar")
+// function add(a,b){
+//     return console.log(a+b)
+// }
+//  add(2,3);
+
+//  task 2 
+// let q
+// function task(){
+//     let a =  prompt("enter fist number ")
+//   let b=   prompt("entr sencond number" )
+  
+//   if ( b==0){
+//       throw SyntaxError("kider")
+//     }
+//      q =    parseInt(a)/ parseInt(b);
+
+
+// }
+// try {
+//     task();
+//     console.log(q);
+// } catch (error) {
+//     console.log(error)
+// }
+
+//                               task3 
+
+// let a =  prompt("enter fist number ")
+//   let b=   prompt("entr sencond number" )
+  
+     
+//       let q  = parseInt(a)+ parseInt(b);
+   
+// try {
+//     if ( isNaN(a) ||isNaN(b) ){
+//       throw SyntaxError("kider")
+//     }
+//     console.log(q);
+// } catch (error) {
+//     console.log(error)
+// }
+// finally{
+
+// console.log("contnue execution flow ")
+// function add(a,b){
+//     return console.log(a+b)
+// }
+//  add(2,3)
+// }
+
+//                                    cutom error object 
+
+// task 4
+
+
+
+
+//  task 5 
+
+// let a =  prompt("enter fist number ")
+//   let b=   prompt("entr sencond number" )
+  
+     
+//       let q  = parseInt(a)+ parseInt(b);
+   
+// try {
+//     if ( isNaN(a) ||isNaN(b) ){
+//       throw  new ValidityError("kider")
+//     }
+//     console.log(q);
+// } catch (error) {
+//     console.log(error)
+// }
+
+// console.log("bhi aja yar")
+// function add(a,b){
+//     return console.log(a+b)
+// }
+//  add(2,3)
+
+//                                       error handling in promises 
+// task6
+//    new Promise((resolve,reject)=>{
+// //    resolve("hassan");
+//    reject (new Error("hassan"));
+// })
+// .then((x)=>{
+//     console.log(x)
+// })
+// .catch((e)=>{
+//      console.log(e)
+// })
+
+//  task 7
+//   let num =prompt("enter a number in between 0 to 20")
+//   let a = new Promise((resolve,reject)=>{
+
+//       if ( num <=20){
+//         resolve(num);
+       
+//       }else{
+//         reject (new Error("promise rejected"));
+//       }
+// })
+//   async function result(){
+//     try {
+//         console.log(a)
+//     } catch (error) {
+//         console.log()
+//     }
+//  } 
+
+// result();
+
+
+
+
+
+// async function handleProm() {
+//     try {
+//         const result = await randomPromiseNew();
+//         console.log("promise resolved " + result );
+
+//     } catch(error) {
+//         console.error("Promise rejected: " + error.message)
+
+//     }
+// }
+
+// async function randomPromiseNew() {
+//     return new Promise((resolve, reject) => {
+//         const randomNum = Math.random();
+
+//         if(randomNum >= 0.5) {
+//             resolve(randomNum);
+//         } else {
+//             reject(new Error("Promise rejected"));
+//         }
+//     })
+// }
+
+// handleProm();
+
+
+// Task8: Use the fetch API to request data from an invalid URL and handle the error using .catch() and log the message
+fetch("http://invalidurl.com")
+.then((res) => res.json())
+
+.catch((error) => console.log('Error' + error));
+
+// Task 9: Use fetch api to request data from and invalid url in async function and handle the error using try catch, log the appropriate message
+
+const urlData = async() => {
+    
+    try {
+        const result = await fetch("http://invalidurl.com")
+         let data = await result.json();
+         console.log(data)
+        
+    } catch (error) {
+        console.error(`Error is ${error}`);
+        
+    }
+}
+
+
+
+
+
+
+
+</script>
+</html>
+
+// Task/Activites
+
+// Activity 1: Basic Error Handling with Try-Catch
+
+// Task 1:
+
+function handleError(){
+    try {
+        throw new Error("Intentional Error.")
+    } catch (error) {
+        console.log("Error: ",error.message)
+    }
+}
+
+handleError();
+
+// Task 2:
+
+let num1 = Number(process.argv[2]) || 20;
+let num2 = Number(process.argv[3]) || 0;
+
+console.log(`Enter First Number: ${typeof(num1)}`);
+console.log(`Enter Second Number: ${num2}`);
+
+function divide(num1,num2){
+    try {
+        if(num2 === 0){
+            throw new Error("Cannot Divide by Zero");
+            } 
+        return `Division of ${num1} and ${num2} is ${num1/num2}`
+       
+    } catch (error) {
+        return `Error: ${error.message}`
+    }
+}
+console.log(`Result: ${divide(num1,num2)}`);
+
+// Activity 2: Finally Block
+
+// Task 3:
+
+function flowOfTCF(){
+    try {
+        console.log("Inside try block.");
+        let result = unknownFunction();
+        console.log("Result: ",result);
+        console.log("Last line of try-block.")
+    } catch (error) {
+        console.log("Inside catch bloack");
+        console.error("Error: ",error.message);
+    } finally {
+        console.log("Inside finally block.")
+    }
+
+    console.log("Code Flow.")
+}
+flowOfTCF();
+
+// Activity 3: Custom Error Objects
+
+// Task 4:
+
+class CustomError extends Error{
+   constructor(message){
+    super(message);
+    this.name = "CustomError";
+   }
+}
+
+function checkEven(num){
+    try {
+        if(!(num%2===0)){
+            throw new CustomError("Number is Odd");
+        }
+        return num%2===0
+    } catch (error) {
+        return error.message
+    }
+    
+}
+
+console.log(checkEven(3));
+
+// Task 5:
+
+let user = process.argv[4] || "";
+
+function validation(user){
+    try {
+        if(user===""){
+            throw new CustomError("User is Empty");
+        }
+        return `${user} is Validated.`
+    } catch (error) {
+        return error.message
+    }
+}
+console.log(validation(user));
+
+// Activity 4: Error Handling in Promises
+
+// Task 6:
+
+let randomNumber  = Math.floor(Math.random() * 10+1);
+
+let checkPromise = new Promise((resolve,reject)=>{
+    if(randomNumber%2===0){
+        resolve(`${randomNumber} is Even`);
+    }
+    else{
+        reject(`${randomNumber} is Odd`);
+    }
+})
+
+checkPromise
+.then((success)=>console.log(success))
+.catch((error)=>console.log(error));
+
+// Task 7:
+
+async function handleErrorUsingAsyncFunc(){
+    try {
+        console.log("Inside async: ",checkPromise)
+        const response = await checkPromise;
+        console.log(response);
+    } catch (error) {
+        console.log(error);        
+    }
+}
+handleErrorUsingAsyncFunc();
+
+// Activity 5: Graceful Error Handling in Fetch
+
+// Task 8:
+
+let baseURL = "https://www.invalid-url.com";
+fetch(baseURL)
+.then((response)=>{
+    
+    if(!response.ok){
+        throw new CustomError(`Error: Invalid URL->${baseURL}`);
+    }
+    
+        return response.text()   
+    
+})
+.then((data)=>{
+    console.log(data);
+    })
+.catch(error => {
+        if (error instanceof CustomError) {
+            console.log(error.message); // Log custom error message
+        } else {
+            console.log(`Fetch failed: ${error.message}`); // Log fetch error message
+        }
+    });
+
+// Task 9:
+
+async function handleFetchError(){
+    try {
+        const response = await fetch(baseURL);
+        
+        if(!response.ok){
+            throw new CustomError(`Error: Invalid URL->${baseURL}`);
+        }
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.indexOf("application/json") !== -1) {
+            const data = await response.json();
+            return data;
+        } else {
+            const data = await response.text();
+            return data;
+        }
+
+    } catch(error) {
+        if (error instanceof CustomError) {
+            console.log(error.message); // Log custom error message
+        } else {
+            console.log(`Fetch failed: ${error.message}`); // Log fetch error message
+        }
+    }
+}
+
+handleFetchError().then(result => console.log(result));

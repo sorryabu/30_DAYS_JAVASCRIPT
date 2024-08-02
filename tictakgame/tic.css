@@ -1,0 +1,59 @@
+
+*{
+    padding: 0%;
+    margin: 0%;
+   
+}
+body{
+ background-color: rgba(48, 43, 43, 0.178);
+}
+.container{
+    height: 60vh;
+    margin-top: 10px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 0%;
+}
+.row{
+    height: 80vh;
+    width: 80vh;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+  
+   
+}
+.row button{
+    height: 20vmin;
+    width: 20vmin;
+    border-radius: 10px;
+     font-size: 20px;
+     color: rgb(78, 114, 64);
+     margin: 3px;
+}
+.bt{
+   width: 100%;
+   height: 100%;
+   margin-top: 50px;
+   text-align: center;
+}
+.bt2{
+
+    margin-top: 10px;
+    text-align: center;
+}
+.n{
+ 
+   margin: auto;
+
+
+}
+.hide{
+    display: none;
+}
+#msg{
+    text-align: center;
+   font-size: larger;
+}
